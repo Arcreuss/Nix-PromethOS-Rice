@@ -34,11 +34,11 @@
         "$mod, R, exec, hyprctl reload"
 	"$mod, W, exec, swww img ~/Pictures/Wallpapapers/green_dinasour.png"
 
-        "$mod, RETURN, exec, kitty"
+        "$mod, Return, exec, kitty"
         "$mod, Q, killactive"
-        "$mod, M, exit"
+        "$mod, Delete, exit"
         "$mod, D, exec, rofi -show drun"
-        "$mod, BACKSPACE, exec, hyprlock"
+        "$mod, BackSpace, exec, hyprlock"
 
 	"$mod, H, movefocus, l"
 	"$mod, L, movefocus, r"
@@ -75,6 +75,9 @@
 	"$mod, mouse_up, workspace, e-1"
 	"$mod, Tab, workspace, e+1"
 	"$mod SHIFT, Tab, workspace, e-1"
+
+	"$mod, R, submap, resize"
+	"$mod, M, submap, move"
       ];
 
       input = {
@@ -97,6 +100,33 @@
         enabled = true;
       };
     };
+
+    extraConfig = ''
+      submap=resize
+      bind=,H,resizeactive,-20 0
+      bind=,L,resizeactive, 20 0
+      bind=,K,resizeactive,0 -20
+      bind=,J,resizeactive,0  20
+      
+      bind=,Return,submap,reset
+      bind=,Escape,submap,reset
+      bind=,BackSpace,submap,reset
+      submap=reset
+
+      submap=move
+      bind=,H,movewindow,l
+      bind=,L,movewindow,r
+      bind=,K,movewindow,u
+      bind=,J,movewindow,d
+
+      bind=,F,togglefloating
+      bind=,P,pseudo
+
+      bind=,Escape,submap,reset
+      bind=,Return,submap,reset
+      bind=,BackSpace,submap,reset
+      submap=reset
+    '';
   };
 
   home.packages = with pkgs; [
