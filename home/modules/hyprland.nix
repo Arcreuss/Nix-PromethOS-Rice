@@ -99,7 +99,14 @@
       animations = {
         enabled = true;
       };
+
+      windowrulev2 = [
+	"float, title:^(Open File|Save File|Choose Files)$"
+	"workspace 2, class:^(discord)$"
+	"workspace 2, class:^(Spotify)$"
+      ];
     };
+    # End Settings Section 
 
     extraConfig = ''
       submap=resize
@@ -127,7 +134,10 @@
       bind=,BackSpace,submap,reset
       submap=reset
     '';
+    # End ExtraConfig Section
+
   };
+  # End Wayland.WindowManager.Hyprland Section
 
   home.packages = with pkgs; [
     waybar
