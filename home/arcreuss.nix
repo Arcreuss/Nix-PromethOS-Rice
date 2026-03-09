@@ -7,6 +7,7 @@
     ./modules/terminal.nix
     ./modules/wayland-tools.nix
     ./modules/hyprland.nix
+    ./modules/waybar.nix
     ./modules/gtk.nix
     ./modules/dev.nix
     ./modules/apps.nix
