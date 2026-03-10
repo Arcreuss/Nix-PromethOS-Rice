@@ -6,7 +6,10 @@
     ./modules/shell.nix
     ./modules/terminal.nix
     ./modules/wayland-tools.nix
-    ./modules/hyprland.nix
+    
+    ./modules/hyprland/base.nix
+    ./modules/hyprland/desktop.nix
+    
     ./modules/waybar.nix
     ./modules/gtk.nix
     ./modules/dev.nix
