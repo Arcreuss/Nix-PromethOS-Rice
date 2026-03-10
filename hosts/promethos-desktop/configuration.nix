@@ -8,16 +8,16 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/system.nix
-      ./modules/boot.nix
-      ./modules/nix.nix
-      ./modules/packages.nix
-      ./modules/desktop.nix
-      ./modules/network.nix
-      ./modules/services.nix
-      ./modules/users.nix
-      ./modules/gnome.nix
-      ./modules/hyprland.nix
+      ../../modules/system.nix
+      ../../modules/boot.nix
+      ../../modules/nix.nix
+      ../../modules/packages.nix
+      ../../modules/desktop.nix
+      ../../modules/network.nix
+      ../../modules/services.nix
+      ../../modules/users.nix
+      ../../modules/gnome.nix
+      ../../modules/hyprland.nix
     ];
 
   # This value determines the NixOS release from which the default

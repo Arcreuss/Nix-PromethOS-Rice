@@ -14,14 +14,14 @@
     system = "x86_64-linux";
   in
   {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.promethos-desktop = nixpkgs.lib.nixosSystem {
       inherit system;
       
       # Permet d'utiliser inputs dans les modules NixOS si besoin
       specialArgs = { inherit inputs; };
 
       modules = [
-        ./configuration.nix
+        ./hosts/promethos-desktop/configuration.nix
 
         home-manager.nixosModules.home-manager
 
