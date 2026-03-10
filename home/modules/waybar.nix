@@ -30,8 +30,9 @@
 
         "hyprland/workspaces" = {
           disable-scroll = false;
-          all-outputs = true;
+          all-outputs = false;
           format = "{id}";
+	  sort-by-number = true;
         };
 
         "hyprland/window" = {
