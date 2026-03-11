@@ -1,6 +1,7 @@
 # My first linux ricing
 
 ## NixOS & Flake
+### The challenge with NixOS
 This is my first time using NixOS, and I can already tell that learning and building my own architecture is a difficult challenge.
 NixOS has the perfect philosphy of what I was looking for : Stability, Reproducible, Control.
 I love how NixOS lets you manage your system however you want. 
