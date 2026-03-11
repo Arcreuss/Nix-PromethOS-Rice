@@ -113,6 +113,12 @@
       bind=,K,resizeactive,0 -20
       bind=,J,resizeactive,0  20
       
+      bind=,N,movefocus,l
+      bind=,M,movefocus,d
+      bind=,comma,movefocus,u
+      bind=,period,movefocus,r
+
+      
       bind=,Return,submap,reset
       bind=,Escape,submap,reset
       bind=,BackSpace,submap,reset
