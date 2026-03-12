@@ -8,7 +8,7 @@ I love how NixOS lets you manage your system however you want.
 Here, the goal is to create a solid and robust architecture as possible, within my beginner's capabilities.
 
 ### Configuration, Profile, Settings
-The main goal is to share a continious intregration of what my configuration, easily usable after cloning by anyone.
+The main goal is to share a continious intregration of my configuration, easily usable after cloning by anyone.
 Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles concepts.
 
 ## Hyprland
