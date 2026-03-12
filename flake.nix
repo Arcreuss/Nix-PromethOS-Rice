@@ -33,7 +33,7 @@
           home-manager.extraSpecialArgs = { inherit inputs system; };
           
           home-manager.users = {
-            arcreuss = import ./home/arcreuss.nix;
+            arcreuss = import ./hosts/promethos-desktop/home.nix;
             # foo = import ./home/foo.nix; # add new user to the user map
           };
         }
