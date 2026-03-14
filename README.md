@@ -156,3 +156,4 @@ Other dotfiles, repository, youtubers that inspired me:
   - [Codingclinician Rice](https://youtu.be/1-3_ecWMCYI?si=RNqcZtxoBRHC0PEy)
   - [Wallpapers](https://github.com/NischalDawadi/Wallpapers)
   
+If this repository helps you build your own NixOS setup, feel free to use it as inspiration.
