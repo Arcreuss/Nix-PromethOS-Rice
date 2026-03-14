@@ -17,12 +17,12 @@ For now, please use this template as a guide to help you create your own.
 
 ## The challenge with NixOS
 This is my first time using NixOS, and I can already tell that learning and building my own architecture is a difficult challenge.
-NixOS has the perfect philosphy of what I was looking for : Stability, Reproducible, Control.\
+NixOS provides exactly the philosophy I was looking for: stability, reproducibility and full control over the system.\
 I love how NixOS lets you manage your system however you want.\
 Here, the goal is to create a solid and robust architecture as possible, within my beginner's capabilities.
 
 ## Hyprland
-As a fan of Arch ricing, I decided to customize my own NixOS WindowManager from scratch with Hyprland, which I had never used or setup before.\
+As a fan of Arch ricing, I decided to customize my own NixOS window manager from scratch with Hyprland, which I had never used or setup before.\
 The Hyprland settings are distributed under the path *../nixos/home/modules/hyprland/* in order to easily define a new profile.\
 The keyboard shortcuts are based on Vim for the navigation.
 
@@ -53,7 +53,7 @@ The keyboard shortcuts are based on Vim for the navigation.
 ```
 
 ## Configuration, Profile, Settings
-The main goal is to share a continuous intregration of my configuration, easily usable after cloning by anyone.\
+The main goal is to share a continuous integration of my configuration, easily usable after cloning by anyone.\
 Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles concepts.
 
 ### Components
@@ -72,7 +72,7 @@ Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles c
 | **Media Player** | [mpv](https://github.com/mpv-player/mpv) |
 | **Text Editor** | [Neovim](https://github.com/neovim/neovim.github.io/) |
 | **Fonts** | [Nerd fonts](https://www.nerdfonts.com/) |
-| **Wallpaper** | [swww](https://codeberg.org/LGFae/awww) | 
+| **Wallpaper** | [swww](https://github.com/LGFae/swww) | 
 | **Youtube player** | [yt-x](https://github.com/Benexl/yt-x) |
 | **Filesystem & encryption** | [btrfs subvolumes](https://btrfs.readthedocs.io/en/latest/) |
 
