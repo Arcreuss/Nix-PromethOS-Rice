@@ -21,6 +21,61 @@ NixOS has the perfect philosphy of what I was looking for : Stability, Reproduci
 I love how NixOS lets you manage your system however you want.\
 Here, the goal is to create a solid and robust architecture as possible, within my beginner's capabilities.
 
+## Hyprland
+As a fan of Arch ricing, I decided to customize my own NixOS WindowManager from scratch with Hyprland, which I had never used or setup before.\
+The Hyprland settings are distributed under the path *../nixos/home/modules/hyprland/* in order to easily define a new profile.\
+The keyboard shortcuts are based on Vim for the navigation.
+
+## Features
+- NixOS flake-based configuration
+- Modular host/profile architecture
+- Hyprland configuration split into reusable modules
+- Waybar + GTK theming
+- Dynamic color schemes using Wallust
+- Multi-host ready configuration
+
+## Structure
+```bash
+.
+├── flake.nix
+├── hosts/
+│   └── promethos-desktop/
+│       ├── configuration.nix
+│       ├── hardware-configuration.nix
+│       └── home.nix
+├── modules/
+├── home/
+│   ├── users/
+│   ├── profiles/
+│   └── modules/
+├── packages/
+└── overlays/
+```
+
+## Configuration, Profile, Settings
+The main goal is to share a continuous intregration of my configuration, easily usable after cloning by anyone.\
+Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles concepts.
+
+### Components
+| | NixOS (Wayland) |
+|--|--|
+| **Window Manager**| [Hyprland](https://github.com/hyprwm/Hyprland) |
+| **Terminal Emulator** | [Kitty](https://github.com/kovidgoyal/kitty) |
+| **Status Bar** | [Waybar](https://github.com/Alexays/Waybar) + [GTK](https://github.com/GNOME/gtk) |
+| **Lockscreen** | [Hyprlock](https://github.com/hyprwm/hyprlock) |
+| **Launcher** | [Rofi](https://github.com/adi1090x/rofi) |
+| **Color scheme generator** | [Wallust](https://docs.rs/wallust/latest/wallust/index.html) |
+| **Network management tool** | [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) |
+| **System resource monitor** | [Btop](https://github.com/aristocratos/btop) |
+| **File Manager** | [Yazi](https://github.com/sxyazi/yazi) |
+| **Shell** | [zsh](https://www.zsh.org/) + [Starship](https://github.com/starship/starship) |
+| **Media Player** | [mpv](https://github.com/mpv-player/mpv) |
+| **Text Editor** | [Neovim](https://github.com/neovim/neovim.github.io/) |
+| **Fonts** | [Nerd fonts](https://www.nerdfonts.com/) |
+| **Wallpaper** | [swww](https://codeberg.org/LGFae/awww) | 
+| **Youtube player** | [yt-x](https://github.com/Benexl/yt-x) |
+| **Filesystem & encryption** | [btrfs subvolumes](https://btrfs.readthedocs.io/en/latest/) |
+
 ## Installation
 :exclamation: Please keep your **hardware-configuration.nix** and move it under your new host folder. :exclamation:
 ```bash
@@ -45,7 +100,7 @@ Create a new user file under the path *nixos/home/users/* to use the HomeManager
   home.stateVersion = "YourVersion";
 
   home.sessionVariables = {
-    # Declare here all environnement variables for your user.
+    # Declare here all environment variables for your user.
 
     # Examples
     EDITOR = "nvim";
@@ -67,7 +122,7 @@ Create a new **home.nix** inside *nixos/hosts/YourHostFolder* and add this confi
   ];
 }
 ```
-If you wan to create a new profile, please always use this configuration as a minimal requirement.
+If you want to create a new profile, please always use this configuration as a minimal requirement.
 ```bash
 { ... }:
 
@@ -77,35 +132,6 @@ If you wan to create a new profile, please always use this configuration as a mi
   ];
 }
 ```
-
-## Configuration, Profile, Settings
-The main goal is to share a continious intregration of my configuration, easily usable after cloning by anyone.\
-Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles concepts.
-
-### Components
-| | NixOS (Wayland) |
-|--|--|
-| **Window Manager**| [Hyprland](https://github.com/hyprwm/Hyprland) |
-| **Terminal Emulator** | [Kitty](https://github.com/kovidgoyal/kitty) |
-| **Status Bar** | [Waybar](https://github.com/Alexays/Waybar) + [GTK](https://github.com/GNOME/gtk) |
-| **Lockscreen** | [Hyprlock](https://github.com/hyprwm/hyprlock) |
-| **Launcher** | [Rofi](https://github.com/adi1090x/rofi) |
-| **Color Scheme** | [Wallust](https://docs.rs/wallust/latest/wallust/index.html) |
-| **Network management tool** | [NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) |
-| **System resource monitor** | [Btop](https://github.com/aristocratos/btop) |
-| **File Manager** | [Yazi](https://github.com/sxyazi/yazi) |
-| **Shell** | [zsh](https://www.zsh.org/) + [Starship](https://github.com/starship/starship) |
-| **Media Player** | [mpv](https://github.com/mpv-player/mpv) |
-| **Text Editor** | [Neovim](https://github.com/neovim/neovim.github.io/) |
-| **Fonts** | [Nerd fonts](https://www.nerdfonts.com/) |
-| **Wallpaper** | [Wallust](https://docs.rs/wallust/latest/wallust/index.html) |
-| **Youtube player** | [yt-x](https://github.com/Benexl/yt-x) |
-| **Filesystem & encryption** | [btrfs subvolumes](https://btrfs.readthedocs.io/en/latest/) |
-
-## Hyprland
-As a fan of Arch ricing, I decided to customize my own NixOS WindowManager from scratch with Hyprland, which I had never used or setup before.\
-The Hyprland settings are dsitributed under the path *../nixos/home/modules/hyprland/* in order to easily define a new profile.\
-The keyboard shortcuts are based on Vim for the navigation.
 
 ## Theme & Visuals
 The final result should be something visually refined and classic.\
