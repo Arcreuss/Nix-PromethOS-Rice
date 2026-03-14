@@ -3,6 +3,11 @@
   <span style="font-size:40px; padding:0 20px;"></span>
   <img src="https://raw.githubusercontent.com/hyprwm/Hyprland/main/assets/header.svg" height="120"/>
 </p>
+<p align="center">
+    <img src="https://img.shields.io/badge/NixOS-25.11-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4">
+  <img src="https://img.shields.io/badge/NixOS-Flake-blue"/>
+  <img src="https://img.shields.io/badge/Hyprland-Wayland-green" height="120"/>
+</p>
 
 # NixOS & Flake
 
