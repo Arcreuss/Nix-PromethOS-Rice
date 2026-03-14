@@ -21,6 +21,63 @@ NixOS has the perfect philosphy of what I was looking for : Stability, Reproduci
 I love how NixOS lets you manage your system however you want.\
 Here, the goal is to create a solid and robust architecture as possible, within my beginner's capabilities.
 
+## Installation
+:exclamation: Please keep your **hardware-configuration.nix** and move it under your new host folder. :exclamation:
+```bash
+git clone https://github.com/Arcreuss/Nix-PromethOS-Rice.git
+cd Nix-PromethOS-Rice
+sudo nixos-rebuild switch --flake .#YourHost
+```
+
+Don't forget to add your user in **nixos/modules/users.nix**, you can use my configuration as reference.\
+Then execute the command line below to set your password.
+```bash
+passwd YourUser
+```
+
+Create a new user file under the path *nixos/home/users/* to use the HomeManager.
+```bash
+{ pkgs, ... }:
+
+{
+  home.username = "YourUserName";
+  home.homeDirectory = "/home/YourUserDirectory";
+  home.stateVersion = "YourVersion";
+
+  home.sessionVariables = {
+    # Declare here all environnement variables for your user.
+
+    # Examples
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    TERMINAL = "kitty";
+    BROWSER = "firefox";
+  }; 
+}
+```
+For your new personal host, you have to link it with your user thought the Home Manager.\
+Create a new **home.nix** inside *nixos/hosts/YourHostFolder* and add this configuration.
+```bash
+{ ... }:
+
+{
+  imports = [
+    ../../home/users/YourUser.nix
+    ../../home/profiles/YourProfile.nix
+  ];
+}
+```
+If you wan to create a new profile, please always use this configuration as a minimal requirement.
+```bash
+{ ... }:
+
+{
+  imports = [
+    ../modules/core.nix  # Add others modules after the core.nix
+  ];
+}
+```
+
 ## Configuration, Profile, Settings
 The main goal is to share a continious intregration of my configuration, easily usable after cloning by anyone.\
 Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles concepts.
