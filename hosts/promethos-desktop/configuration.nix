@@ -18,6 +18,7 @@
       ../../modules/users.nix
       ../../modules/gnome.nix
       ../../modules/hyprland.nix
+      ../../modules/gaming.nix
     ];
 
   # This value determines the NixOS release from which the default

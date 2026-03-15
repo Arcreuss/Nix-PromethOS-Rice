@@ -10,5 +10,6 @@
     curl
     firefox
     pavucontrol
+    blueman
   ];
 }

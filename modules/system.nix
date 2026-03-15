@@ -24,10 +24,16 @@
   # Configure console keymap
   console.keyMap = "dvorak";
   
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+  hardware = {
+    opengl = {
+      enable = true;
+      driSupport32Bit = true;
+      };
+
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 
 }

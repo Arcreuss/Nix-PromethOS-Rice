@@ -16,9 +16,10 @@
 
   environment.systemPackages = with pkgs; [
     mangohud
-    protonup
+    protonup-ng
     heroic
     lutris
     wineWowPackages.stable
+    vulkan-tools
   ];
 }
