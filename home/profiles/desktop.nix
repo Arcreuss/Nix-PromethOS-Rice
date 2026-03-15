@@ -13,6 +13,7 @@
     ../modules/waybar.nix
     ../modules/gtk.nix
     ../modules/dev.nix
+    
     ../modules/apps.nix
     ../modules/media.nix
     ../modules/theme.nix
