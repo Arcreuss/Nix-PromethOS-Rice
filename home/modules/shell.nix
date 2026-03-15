@@ -14,8 +14,8 @@
 
     shellAliases = {
       ll = "ls -lah";
-      pmtrebuild = "sudo nixos-rebuild switch --flake /etc/nixos#promethos-desktop";
-      pmtupgrade = "sudo nixos-rebuild switch --upgrade --flake /etc/nixos#promethos-desktop";
+      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#promethos-desktop";
+      nix-update = "cd /etc/nixos && nix flake update && sudo nixos-rebuild switch --flake .#promethos-desktop";
     };
     
     initContent = ''
