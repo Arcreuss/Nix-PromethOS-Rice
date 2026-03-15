@@ -23,6 +23,8 @@
 
 	"waybar"
         "swww init"
+
+	"easyeffects --gapplication-service"
       ];
 
       bind = [
