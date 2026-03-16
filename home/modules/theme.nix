@@ -5,6 +5,7 @@
     # Font pour Kitty / Starship / icons
     nerd-fonts.jetbrains-mono
     wallust
+    (import ../../packages/setwall { inherit pkgs; })
   ];
   
   # Config Wallust
