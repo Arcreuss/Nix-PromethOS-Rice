@@ -25,6 +25,8 @@
         "swww init"
 
 	"easyeffects --gapplication-service"
+
+	"mako"
       ];
 
       bind = [

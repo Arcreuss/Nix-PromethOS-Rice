@@ -7,6 +7,7 @@ pkgs.writeShellApplication {
     rofi
     findutils
     coreutils
+    libnotify
   ];
 
   text = builtins.readFile ./pickwall.sh;

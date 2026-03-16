@@ -17,5 +17,8 @@
 
     # Color picker pratique
     hyprpicker
+
+    # Notification daemon
+    mako
   ];
 }
