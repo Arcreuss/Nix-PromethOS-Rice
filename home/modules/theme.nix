@@ -6,6 +6,7 @@
     nerd-fonts.jetbrains-mono
     wallust
     (import ../../packages/setwall { inherit pkgs; })
+    (import ../../packages/pickwall { inherit pkgs; })
   ];
   
   # Config Wallust
