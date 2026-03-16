@@ -17,5 +17,6 @@
     ../modules/apps.nix
     ../modules/media.nix
     ../modules/theme.nix
+    ../modules/rofi/rofi.nix
   ];
 }
