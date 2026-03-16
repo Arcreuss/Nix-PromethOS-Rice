@@ -8,6 +8,7 @@ pkgs.writeShellApplication {
     wallust
     waybar
     hyprland
+    libnotify
   ];
 
   text = builtins.readFile ./setwall.sh;

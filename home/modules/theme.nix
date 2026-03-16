@@ -1,12 +1,19 @@
 { config, pkgs, ... }:
 
+let
+  setwallPkg = import ../../packages/setwall { inherit pkgs; };
+  pickwallPkg = import ../../packages/pickwall {
+    inherit pkgs;
+    setwall = setwallPkg;
+  };
+in
 {
   home.packages = with pkgs; [
     # Font pour Kitty / Starship / icons
     nerd-fonts.jetbrains-mono
     wallust
-    (import ../../packages/setwall { inherit pkgs; })
-    (import ../../packages/pickwall { inherit pkgs; })
+    setwallPkg
+    pickwallPkg
   ];
   
   # Config Wallust

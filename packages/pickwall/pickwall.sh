@@ -8,13 +8,13 @@ if [ ! -d "$WALL_DIR" ]; then
 fi
 
 # Random Mode
-if [ "$1" = "random" ]; then
+if [ "${1:-}" = "random" ]; then
     RANDOM_WALL=$(find "$WALL_DIR" -type f\
         \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) \
 	| shuf -n 1)
 
         if [ -z "$RANDOM_WALL" ]; then
-	    echo "No wallpapers found"
+	    notify-send "Wallpaper" "No wallpapers found"
 	    exit 1
 	fi
 

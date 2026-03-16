@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, setwall }:
 
 pkgs.writeShellApplication {
   name = "pickwall";
@@ -8,6 +8,7 @@ pkgs.writeShellApplication {
     findutils
     coreutils
     libnotify
+    setwall
   ];
 
   text = builtins.readFile ./pickwall.sh;
