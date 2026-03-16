@@ -23,4 +23,4 @@ pkill waybar || true
 waybar >/dev/null 2>&1 & disown
 
 hyprctl reload
-echo "Theme updated!"
+notify-send "Wallpaper updated" "$(basename "$WALLPAPER")"

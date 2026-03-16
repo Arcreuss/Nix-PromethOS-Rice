@@ -19,7 +19,6 @@ if [ "${1:-}" = "random" ]; then
 	fi
 
 	setwall "$RANDOM_WALL"
-	notify-send "Wallpaper" "Random wallpaper applied"
 	exit 0
 fi
 
