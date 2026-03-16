@@ -77,7 +77,7 @@ Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles c
 | **Media Player** | [mpv](https://github.com/mpv-player/mpv) |
 | **Text Editor** | [Neovim](https://github.com/neovim/neovim.github.io/) |
 | **Fonts** | [Nerd fonts](https://www.nerdfonts.com/) |
-| **Wallpaper** | [swww](https://github.com/LGFae/swww) | 
+| **Wallpaper** | [swww](https://github.com/LGFae/swww) + pickwall (internal pkg)| 
 | **Youtube player** | [yt-x](https://github.com/Benexl/yt-x) |
 | **Filesystem & encryption** | [btrfs subvolumes](https://btrfs.readthedocs.io/en/latest/) |
 
