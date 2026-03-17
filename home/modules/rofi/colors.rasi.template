@@ -1,5 +1,5 @@
 * {
-    bg: {{background}}ee;
+    bg: {{background}}dd;
     bg-alt: {{color1}}ee;
     fg: {{foreground}};
     accent: {{color5}};

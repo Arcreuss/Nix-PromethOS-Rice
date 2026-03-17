@@ -114,6 +114,14 @@
 	"workspace 2, class:^(discord-canary)$"
 	"workspace 2, class:^(Spotify)$"
       ];
+
+      decoration = {
+        blur = {
+	  enabled = true;
+	  size = 8;
+	  passes = 2;
+	};
+      };
     };
     # End Settings Section 
 
