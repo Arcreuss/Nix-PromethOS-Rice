@@ -16,6 +16,7 @@
       ll = "ls -lah";
       rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#promethos-desktop";
       nix-update = "cd /etc/nixos && nix flake update && sudo nixos-rebuild switch --flake .#promethos-desktop";
+      conf = "cd /etc/nixos";
     };
     
     initContent = ''
