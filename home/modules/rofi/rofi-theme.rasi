@@ -54,6 +54,13 @@ element {
     border-radius: 10px;
     background-color: transparent;
     text-color: @fg;
+    children: [ element-icon, element-text ];
+    spacing: 10px;
+}
+
+element-icon {
+    size: 1.2em;
+    vertical-align: 0.5;
 }
 
 element selected {
@@ -64,4 +71,5 @@ element selected {
 element-text {
     background-color: inherit;
     text-color: inherit;
+    vertical-align: 0.5;
 }
