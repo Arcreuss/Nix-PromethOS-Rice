@@ -1,0 +1,6 @@
+* {
+    bg: {{background}}ee;
+    bg-alt: {{color1}}ee;
+    fg: {{foreground}};
+    accent: {{color5}};
+}

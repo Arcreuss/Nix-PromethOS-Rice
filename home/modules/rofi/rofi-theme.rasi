@@ -1,9 +1,6 @@
-* {
-    bg:     #111111ee;
-    bg-alt: #1c1c1cee;
-    fg:     #e6e6e6;
-    accent: #89b4fa;
+@import "~/.config/rofi/colors.rasi"
 
+* {
     background-color: @bg;
     text-color: @fg;
     border-color: @accent;
@@ -25,20 +22,24 @@ mainbox {
 }
 
 inputbar {
-    background-color: @bg-alt;
-    border-radius: 10px;
-    padding: 10px 12px;
-    spacing: 8px;
+    background-color: @bg;
+    border: 10px;
+    border-color: @accent;
+    border-radius: 4px;
+    padding: 2px 4px;
+    spacing: 18px;
     children: [ prompt, entry ];
 }
 
 prompt {
+    background-color: transparent;
     text-color: @accent;
 }
 
 entry {
+    background-color: transparent;
     placeholder: "Search...";
-    placeholder-color: #888888;
+    placeholder-color: @accent;
 }
 
 listview {
@@ -65,7 +66,7 @@ element-icon {
 
 element selected {
     background-color: @accent;
-    text-color: #111111;
+    text-color: @bg;
 }
 
 element-text {
