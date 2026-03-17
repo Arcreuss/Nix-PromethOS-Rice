@@ -16,7 +16,7 @@ fi
 swww img "$WALLPAPER" --transition-type grow --transition-duration 1
 
 # generate palette / -q for quiet log
-wallust run "$WALLPAPER" -q 
+wallust run "$WALLPAPER" -q
 
 # reload UI
 pkill waybar || true
