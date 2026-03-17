@@ -8,7 +8,7 @@
 
     extraConfig = {
       show-icons = true;
-      display-drun = "Apps";
+      display-drun = "Apps :";
       drun-display-format = "{name}";
     };
   };
