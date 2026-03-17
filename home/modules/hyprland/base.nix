@@ -19,7 +19,7 @@
 	"pgrep -x swww-daemon >/dev/null || swww-daemon"
 
 	# Apply the wallpaper
-	"sleep 0.5 && swww img ~/Pictures/Wallpapers/green_dinasour.png"
+	"sleep 0.5 && pickwall random"
 
 	"waybar"
         "swww init"
@@ -31,7 +31,8 @@
 
       bind = [
         "$mod, R, exec, hyprctl reload"
-	"$mod, W, exec, swww img ~/Pictures/Wallpapapers/green_dinasour.png"
+	"$mod, W, exec, pickwall"
+	"$mod SHIFT, W, exec, pickwall random"
 
         "$mod, Return, exec, kitty"
         "$mod, Q, killactive"
