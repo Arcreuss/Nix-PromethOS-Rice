@@ -10,6 +10,7 @@
     ../modules/hyprland/base.nix
     ../modules/hyprland/desktop.nix
     ../modules/hyprland/media.nix
+    ../modules/hyprland/screenshot.nix
 
     ../modules/waybar.nix
     ../modules/gtk.nix
