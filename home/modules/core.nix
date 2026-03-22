@@ -11,5 +11,7 @@
     firefox
     pavucontrol
     blueman
+    wev
+    playerctl
   ];
 }

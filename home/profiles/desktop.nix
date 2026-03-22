@@ -9,6 +9,7 @@
 
     ../modules/hyprland/base.nix
     ../modules/hyprland/desktop.nix
+    ../modules/hyprland/media.nix
 
     ../modules/waybar.nix
     ../modules/gtk.nix
