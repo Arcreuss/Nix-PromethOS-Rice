@@ -8,6 +8,7 @@ pkgs.writeShellApplication {
     findutils
     coreutils
     libnotify
+    imagemagick
     setwall
   ];
 

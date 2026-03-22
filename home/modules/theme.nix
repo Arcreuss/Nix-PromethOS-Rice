@@ -20,13 +20,13 @@ in
   xdg.configFile."wallust/wallust.toml" = {
     force = true;
     text = ''
-      backend = "full"
+      backend = "fastresize"
       colorspace = "lab"
       check_contrast = true
 
       [templates.rofi]
       template = 'rofi-colors.rasi'
-      target = '~/.config/rofi/colors.rasi'
+      target = '~/.config/rofi/wallust/rofi-colors.rasi'
       
       [templates.kitty]
       template = "colors-kitty.conf"

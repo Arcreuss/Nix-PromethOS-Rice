@@ -1,6 +1,15 @@
 * {
+    // Launcher colors
     bg: {{background}}dd;
-    bg-alt: {{color1}}ee;
+    bg-alt: {{color0}}ee;
     fg: {{foreground}};
-    accent: {{color5}};
+    accent: {{color6}};
+
+    // Wallpaper colors
+    foreground: {{foreground}};
+    background: {{background}};
+    background-alt: {{color0}};
+    selected-normal-background: {{color6}};
+    selected-active-background: {{color5}};
+    selected-urgent-background: {{color1}};
 }

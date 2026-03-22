@@ -12,4 +12,6 @@
       drun-display-format = "{name}";
     };
   };
+
+  xdg.configFile."rofi/wallpaper-theme.rasi".source = ./wallpaper-theme.rasi;
 }

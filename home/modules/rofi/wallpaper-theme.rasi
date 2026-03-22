@@ -1,0 +1,126 @@
+@import "~/.config/rofi/wallust/rofi-colors.rasi"
+
+configuration {
+    modi: "drun";
+    font: "JetBrains Mono Nerd Font 12";
+    show-icons: true;
+    hover-select: true;
+    me-select-entry: "MouseSecondary";
+    me-accept-entry: "MousePrimary";
+    dpi: 1;
+}
+
+* {
+    background-alt: @selected-active-background;
+    selected: @selected-normal-background;
+    active: @selected-normal-background;
+    urgent: @selected-active-background;
+    text-selected: @foreground;
+    text-color: @foreground;
+    border-color: @selected;
+}
+
+window {
+    enabled: true;
+    fullscreen: false;
+    transparency: "real";
+    cursor: "default";
+    spacing: 0px;
+    border-radius: 10px;
+    location: center;
+    anchor: center;
+    width: 75%;
+    background-color: #000000dd;
+    border: 2px;
+    border-color: @selected-normal-background;
+}
+
+mainbox {
+    enabled: true;
+    children: [ "listview" ];
+    background-color: transparent;
+}
+
+listview {
+    enabled: true;
+    columns: 5;
+    lines: 1;
+    padding: 26px 36px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    background-color: transparent;
+    spacing: 20px;
+    border: 0px;
+}
+
+element {
+    enabled: true;
+    orientation: vertical;
+    expand: false;
+    spacing: 0px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: rgba(0, 0, 0, 0.35);
+    border: 2px;
+    border-color: @selected-normal-background;
+}
+
+element normal.urgent {
+    background-color: #00000000;
+}
+
+element normal.active {
+    background-color: #00000000;
+}
+
+element selected.normal {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px;
+    border-color: @selected-active-background;
+}
+
+element alternate.normal {
+    background-color: rgba(0, 0, 0, 0.35);
+    border: 2px;
+    border-color: @selected-normal-background;
+}
+
+element alternate.urgent {
+    background-color: #00000000;
+}
+
+element alternate.active {
+    background-color: #00000000;
+}
+
+element-icon {
+    size: 50%;
+    cursor: inherit;
+    expand: false;
+    padding: 0px;
+    background-color: #00000000;
+}
+
+element-text {
+    cursor: inherit;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+element-text normal.normal,
+element-text alternate.normal {
+    text-color: @selected-normal-background;
+}
+
+element-text selected.normal {
+    text-color: @foreground;
+}

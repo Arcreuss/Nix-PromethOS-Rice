@@ -1,4 +1,4 @@
-@import "~/.config/rofi/colors.rasi"
+@import "~/.config/rofi/wallust/rofi-colors.rasi"
 
 * {
     background-color: @bg;
