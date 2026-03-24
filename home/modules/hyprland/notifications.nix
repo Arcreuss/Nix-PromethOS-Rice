@@ -1,0 +1,62 @@
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    swaynotificationcenter
+  ];
+
+  wayland.windowManager.hyprland.settings.bind = [
+      "$mod, N, exec, swaync-client -t"
+  ];
+
+  # Config swaync
+  xdg.configFile."swaync/config.json".text = ''
+  {
+    "positionX": "right",
+    "positionY": "top",
+    "layer": "overlay",
+    "layer-shell": true,
+    "cssPriority": "user",
+
+    "control-center-margin-top": 10,
+    "control-center-margin-bottom": 10,
+    "control-center-margin-right": 10,
+
+    "notification-margin": 8,
+
+    "timeout": 3,
+    "timeout-low": 2,
+    "timeout-critical": 0,
+
+    "fit-to-screen": true,
+
+    "control-center-width": 420,
+    "notification-window-width": 420,
+    "keyboard-shortcuts": true,
+    "image-visibility": "when-available",
+    "transition-time": 200,
+    "hide-on-clear": false,
+    "hide-on-action": true,
+
+    "widgets": [
+      "title",
+      "dnd",
+      "notifications"
+    ],
+
+    "widget-config": {
+      "title": {
+        "text": "Notifications",
+        "clear-all-button": true,
+        "button-text": "󰆴 Clear All"
+      },
+      "dnd": {
+        "text": "Do Not Disturb"
+      },
+      "notifications": {
+        "show-time": true
+      }
+    }
+  }
+  '';
+}

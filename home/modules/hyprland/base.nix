@@ -7,6 +7,14 @@
     settings = {
       "$mod" = "SUPER";
 
+      env = [
+        "XDG_CURRENT_DESKTOP,Hyprland"
+	"XDG_SESSION_DESKTOP,Hyprland"
+	"XDG_SESSION_TYPE,wayland"
+	"ADW_DISABLE_PORTAL,1"
+	"GTK_THEME,Adwaita:dark" 
+      ];
+
       workspace = [
         "1,monitor:DP-1"
 	"2,monitor:DP-3"
@@ -15,18 +23,18 @@
       ];
 
       exec-once = [
-        # start the daemon only if it doesn't exist yet
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland XDG_SESSION_DESKTOP=Hyprland XDG_SESSION_TYPE=wayland ADW_DISABLE_PORTAL=1"
+        
+	"env ADW_DISABLE_PORTAL=1 swaync"
+        
+	# start the daemon only if it doesn't exist yet
 	"pgrep -x swww-daemon >/dev/null || swww-daemon"
+
+	"waybar"
+	"easyeffects --gapplication-service"
 
 	# Apply the wallpaper
 	"sleep 0.5 && pickwall random"
-
-	"waybar"
-        "swww init"
-
-	"easyeffects --gapplication-service"
-
-	"mako"
       ];
 
       bind = [

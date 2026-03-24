@@ -10,6 +10,8 @@
     VISUAL = "nvim";
     TERMINAL = "kitty";
     BROWSER = "firefox";
+
+    ADW_DISABLE_PORTAL = "1";
   };
   
   programs.git = {

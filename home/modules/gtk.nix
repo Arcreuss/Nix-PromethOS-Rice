@@ -1,17 +1,28 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    dconf
+    gnome-themes-extra
+  ];
+
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+
+    gtk3.extraConfig = {
+      gtk-theme-name = "Adwaita";
+      gtk-application-prefer-dark-theme = true;
     };
   };
 
-  # Optionnel mais souvent utile pour forcer la préférence dark
   dconf.enable = true;
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
+    icon-theme = "Adwaita";
   };
 }

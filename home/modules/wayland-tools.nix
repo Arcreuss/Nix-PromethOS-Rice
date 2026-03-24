@@ -15,10 +15,7 @@
     grim
     slurp
 
-    # Color picker pratique
+    # Color picker 
     hyprpicker
-
-    # Notification daemon
-    mako
   ];
 }

@@ -11,6 +11,7 @@
     ../modules/hyprland/desktop.nix
     ../modules/hyprland/media.nix
     ../modules/hyprland/screenshot.nix
+    ../modules/hyprland/notifications.nix
 
     ../modules/waybar.nix
     ../modules/gtk.nix
