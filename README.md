@@ -80,6 +80,7 @@ Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles c
 | **Wallpaper** | [swww](https://github.com/LGFae/swww) + pickwall (internal pkg)| 
 | **Youtube player** | [yt-x](https://github.com/Benexl/yt-x) |
 | **Filesystem & encryption** | [btrfs subvolumes](https://btrfs.readthedocs.io/en/latest/) |
+| **Notifications** | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
 
 ## Installation
 :exclamation: Please keep your **hardware-configuration.nix** and move it under your new host folder. :exclamation:
