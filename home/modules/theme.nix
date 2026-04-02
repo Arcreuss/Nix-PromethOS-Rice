@@ -35,9 +35,16 @@ in
       [templates.starship]
       template = "starship.toml"
       target = "~/.config/starship.toml"
+
+      [templates.swaync]
+      template = "swaync-colors.css"
+      target = "~/.config/swaync/wallust/swaync-colors.css"
     '';
   };
 
   xdg.configFile."wallust/templates/rofi-colors.rasi".source =
   ../modules/rofi/colors.rasi.template;
+
+  xdg.configFile."wallust/templates/swaync-colors.css".source =
+  ./hyprland/swaync/colors.css.template;
 }

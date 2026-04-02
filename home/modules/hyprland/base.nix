@@ -31,6 +31,7 @@
 	"pgrep -x swww-daemon >/dev/null || swww-daemon"
 
 	"waybar"
+        "sh -c 'swaync >/dev/null 2>&1 &'"
 	"easyeffects --gapplication-service"
 
 	# Apply the wallpaper

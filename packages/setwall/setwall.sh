@@ -22,5 +22,7 @@ wallust run "$WALLPAPER" -q
 pkill waybar || true
 waybar >/dev/null 2>&1 & disown
 
+swaync-client --reload-css >/dev/null 2>&1 || true
+
 hyprctl reload
 notify-send "Wallpaper updated" "$(basename "$WALLPAPER")"

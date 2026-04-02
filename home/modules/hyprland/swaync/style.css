@@ -6,10 +6,10 @@
 }
 
 .control-center {
-  background-color: alpha(@bg, 0.88);
-  border: 1px solid alpha(@accent, 0.45);
+  background-color: alpha(@bg, 0.82);
+  border: 1px solid alpha(@accent, 0.50);
   border-radius: 24px;
-  box-shadow: 0 0 0 1px alpha(@accent, 0.08);
+  box-shadow: 0 0 0 1px alpha(@accent, 0.10);
 }
 
 .control-center-list {
@@ -22,10 +22,10 @@
 }
 
 .notification {
-  background-color: alpha(@bg-alt, 0.82);
-  border: 1px solid alpha(@accent, 0.35);
+  background-color: alpha(@bg-alt, 0.78);
+  border: 1px solid alpha(@accent, 0.42);
   border-radius: 18px;
-  box-shadow: 0 0 0 1px alpha(@accent, 0.06);
+  box-shadow: 0 0 0 1px alpha(@accent, 0.08);
 }
 
 .notification-content {
@@ -40,28 +40,28 @@
 }
 
 .notification-default-action:hover {
-  background-color: alpha(@accent, 0.08);
+  background-color: alpha(@accent, 0.10);
 }
 
 .summary {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   color: @accent;
+}
+
+.body {
+  color: alpha(@fg, 0.92);
+}
+
+.app-name {
+  font-size: 12px;
+  color: alpha(@accent, 0.82);
 }
 
 .time {
   font-size: 12px;
   font-weight: 500;
-  color: alpha(@fg, 0.58);
-}
-
-.body {
-  color: alpha(@fg, 0.90);
-}
-
-.app-name {
-  font-size: 12px;
-  color: alpha(@accent, 0.75);
+  color: alpha(@fg, 0.65);
 }
 
 .widget-title {
@@ -72,7 +72,7 @@
 }
 
 .widget-title button {
-  background-color: alpha(@bg-alt, 0.55);
+  background-color: alpha(@bg-alt, 0.65);
   color: @accent;
   border: 1px solid alpha(@accent, 0.35);
   border-radius: 12px;
@@ -80,7 +80,7 @@
 }
 
 .widget-title button:hover {
-  background-color: alpha(@accent, 0.14);
+  background-color: alpha(@accent, 0.16);
   color: @fg;
 }
 
@@ -93,11 +93,11 @@
 .widget-dnd > switch {
   background-color: alpha(@muted, 0.35);
   border-radius: 999px;
-  border: 1px solid alpha(@accent, 0.18);
+  border: 1px solid alpha(@accent, 0.20);
 }
 
 .widget-dnd > switch:checked {
-  background-color: alpha(@accent, 0.95);
+  background-color: @accent;
 }
 
 .widget-dnd > switch slider {
@@ -109,19 +109,19 @@
   margin: 8px 6px 6px 6px;
   padding: 8px 12px;
   border-radius: 12px;
-  background-color: alpha(@bg-alt, 0.55);
+  background-color: alpha(@bg-alt, 0.65);
   color: @accent;
-  border: 1px solid alpha(@accent, 0.28);
+  border: 1px solid alpha(@accent, 0.30);
 }
 
 .notification-action:hover {
-  background-color: alpha(@accent-alt, 0.20);
+  background-color: alpha(@accent-alt, 0.22);
   color: @fg;
 }
 
 .notification.critical {
-  background-color: alpha(@urgent, 0.16);
-  border: 1px solid alpha(@urgent, 0.50);
+  background-color: alpha(@urgent, 0.18);
+  border: 1px solid alpha(@urgent, 0.55);
 }
 
 .notification.critical .summary {
