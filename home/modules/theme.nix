@@ -42,7 +42,7 @@ in
 
       [templates.waybar]
       template = "waybar-colors.css"
-      target = "~/.config/waybar/waybar-colors.css"
+      target = "~/.config/waybar/wallust/waybar-colors.css"
     '';
   };
 
