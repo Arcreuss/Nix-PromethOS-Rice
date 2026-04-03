@@ -2,26 +2,60 @@
 
 * {
   border: none;
-  border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 14px;
+  box-shadow: none;
   min-height: 0;
-  color: @fg;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: @accent;
 }
 
 window#waybar {
-  background: alpha(@bg, 0.82);
-  color: @fg;
+  background: transparent;
+  color: @accent;
 }
 
+.modules-left,
+.modules-center,
+.modules-right {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+/* Pastilles */
+#workspaces,
+#window,
+#clock,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#tray {
+  background: alpha(@bg-alt, 0.72);
+  border: 2px solid alpha(@accent, 0.50);
+  border-radius: 999px;
+  padding: 0 12px;
+  margin: 0 5px;
+  color: @accent;
+}
+
+/* Workspaces */
 #workspaces {
-  margin: 0 6px;
+  padding: 0 6px;
 }
 
 #workspaces button {
-  padding: 0 8px;
-  color: alpha(@fg, 0.75);
+  padding: 0 10px;
+  margin: 4px 2px;
+  min-width: 18px;
+  border-radius: 999px;
   background: transparent;
+  color: alpha(@accent, 0.72);
+}
+
+#workspaces button:hover {
+  background: alpha(@accent, 0.10);
+  color: @accent;
 }
 
 #workspaces button.active {
@@ -29,33 +63,63 @@ window#waybar {
   color: @accent;
 }
 
-#workspaces button:hover {
-  background: alpha(@accent, 0.10);
-  color: @fg;
+#workspaces button.urgent {
+  background: alpha(@urgent, 0.18);
+  color: @urgent;
 }
 
+/* Window */
 #window {
-  margin: 0 10px;
-  font-weight: bold;
+  color: @accent;
+  font-weight: 700;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* Clock */
+#clock {
+  color: @accent;
+  font-weight: 800;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Modules de droite */
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#tray {
   color: @accent;
 }
 
-#clock,
-#cpu,
-#memory,
-#network,
-#pulseaudio,
-#tray {
-  margin: 0 8px;
-  padding: 0 6px;
-  color: @fg;
+/* États spéciaux */
+#pulseaudio.muted,
+#network.disconnected {
+  color: @urgent;
 }
 
+/* Tray */
+#tray {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+/* Tooltip */
 tooltip {
-  background: alpha(@bg, 0.96);
-  border: 1px solid alpha(@accent, 0.28);
+  background: alpha(@bg, 0.94);
+  border: 2px solid alpha(@accent, 0.35);
+  border-radius: 14px;
 }
 
 tooltip label {
-  color: @fg;
+  color: @accent;
 }
