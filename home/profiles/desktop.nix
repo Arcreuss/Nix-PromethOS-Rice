@@ -13,7 +13,7 @@
     ../modules/hyprland/screenshot.nix
     ../modules/hyprland/notifications.nix
 
-    ../modules/waybar.nix
+    ../modules/waybar/waybar.nix
     ../modules/gtk.nix
     ../modules/dev.nix
     

@@ -42,7 +42,7 @@ in
 
       [templates.waybar]
       template = "waybar-colors.css"
-      target = "~/.config/waybar/wallust/waybar-colors.css"
+      target = "~/.config/waybar/waybar-colors.css"
     '';
   };
 
@@ -53,5 +53,5 @@ in
   ./hyprland/swaync/colors.css.template;
 
   xdg.configFile."wallust/templates/waybar-colors.css".source =
-  ./hyprland/waybar/colors.css.template;
+  ./waybar/colors.css.template;
 }

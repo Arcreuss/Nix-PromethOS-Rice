@@ -1,15 +1,17 @@
+@import url("wallust/waybar-colors.css");
 
 * {
   border: none;
   border-radius: 0;
-  font-family: JetBrainsMono Nerd Font, monospace;
+  font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 14px;
   min-height: 0;
+  color: @fg;
 }
 
 window#waybar {
-  background: rgba(20, 20, 20, 0.92);
-  color: #e6e6e6;
+  background: alpha(@bg, 0.82);
+  color: @fg;
 }
 
 #workspaces {
@@ -18,23 +20,24 @@ window#waybar {
 
 #workspaces button {
   padding: 0 8px;
-  color: #cfcfcf;
+  color: alpha(@fg, 0.75);
   background: transparent;
 }
 
 #workspaces button.active {
-  background: #3a3a3a;
-  color: #ffffff;
+  background: alpha(@accent, 0.18);
+  color: @accent;
 }
 
 #workspaces button:hover {
-  background: #505050;
-  color: #ffffff;
+  background: alpha(@accent, 0.10);
+  color: @fg;
 }
 
 #window {
   margin: 0 10px;
   font-weight: bold;
+  color: @accent;
 }
 
 #clock,
@@ -45,4 +48,14 @@ window#waybar {
 #tray {
   margin: 0 8px;
   padding: 0 6px;
+  color: @fg;
+}
+
+tooltip {
+  background: alpha(@bg, 0.96);
+  border: 1px solid alpha(@accent, 0.28);
+}
+
+tooltip label {
+  color: @fg;
 }
