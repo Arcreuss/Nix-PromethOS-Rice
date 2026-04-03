@@ -43,6 +43,10 @@ in
       [templates.waybar]
       template = "waybar-colors.css"
       target = "~/.config/waybar/wallust/waybar-colors.css"
+
+      [templates.hyprlock]
+      template = "hyprlock-colors.conf"
+      target = "~/.config/hypr/hyprlock-colors.conf"
     '';
   };
 
@@ -54,4 +58,7 @@ in
 
   xdg.configFile."wallust/templates/waybar-colors.css".source =
   ./waybar/colors.css.template;
+
+  xdg.configFile."wallust/templates/hyprlock-colors.conf".source =
+  ./hyprland/hyprlock/colors.conf.template;
 }

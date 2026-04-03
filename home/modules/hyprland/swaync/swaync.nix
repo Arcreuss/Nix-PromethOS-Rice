@@ -9,6 +9,6 @@
       "$mod, N, exec, swaync-client -t"
   ];
 
-  xdg.configFile."swaync/config.json".source = ./swaync/config.json;
-  xdg.configFile."swaync/style.css".source = ./swaync/style.css;
+  xdg.configFile."swaync/config.json".source = ./config.json;
+  xdg.configFile."swaync/style.css".source = ./style.css;
 }

@@ -39,7 +39,6 @@
       ];
 
       bind = [
-        "$mod, R, exec, hyprctl reload"
 	"$mod, W, exec, pickwall"
 	"$mod SHIFT, W, exec, pickwall random"
 
@@ -47,7 +46,6 @@
         "$mod, Q, killactive"
         "$mod, Delete, exit"
         "$mod, D, exec, rofi -show drun"
-        "$mod, BackSpace, exec, hyprlock"
 
 	"$mod, H, movefocus, l"
 	"$mod, L, movefocus, r"
@@ -170,10 +168,4 @@
 
   };
   # End Wayland.WindowManager.Hyprland Section
-
-  home.packages = with pkgs; [
-    waybar
-    kitty
-    hyprlock
-  ];
 }

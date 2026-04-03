@@ -1,0 +1,7 @@
+$bg = rgb(14,12,16)
+$bg2 = rgb(28,25,32)
+$fg = rgb(245,224,220)
+$accent = rgb({{color5.rgb}})
+$accent2 = rgb({{color6.rgb}})
+$urgent = rgb({{color1.rgb}})
+$muted = rgb({{color8.rgb}})
