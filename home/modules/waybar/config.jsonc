@@ -1,0 +1,88 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 8,
+
+  // === Modules ===
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "tray"
+  ],
+
+  // === Workspaces ===
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": false,
+    "format": "{id}",
+    "sort-by-number": true
+  },
+
+  // === Active window title ===
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 60
+  },
+
+  // === Clock ===
+  "clock": {
+    "interval": 1,
+    "format": "  {:%H:%M:%S}",
+    "format-alt": "  {:%A %d %B %Y}",
+    "tooltip-format": "<big>{:%A %d %B %Y}</big>\n<tt>{calendar}</tt>"
+  },
+
+  // === CPU ===
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "interval": 2
+  },
+
+  // === Memory ===
+  "memory": {
+    "format": "  {}%",
+    "interval": 2
+  },
+
+  // === Network ===
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  Wired",
+    "format-disconnected": "󰖪  Offline",
+
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+
+  // === Audio ===
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  muted",
+
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+
+    "on-click": "pavucontrol"
+  },
+
+  // === Tray ===
+  "tray": {
+    "spacing": 10
+  }
+}

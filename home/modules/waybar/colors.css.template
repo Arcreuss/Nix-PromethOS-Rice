@@ -1,0 +1,7 @@
+@define-color bg #141216;
+@define-color bg-alt #1c1920;
+@define-color fg #f5e0dc;
+@define-color accent {{color5}};
+@define-color accent-alt {{color6}};
+@define-color urgent {{color1}};
+@define-color muted {{color8}};
