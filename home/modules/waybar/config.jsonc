@@ -89,7 +89,8 @@
       "default": ["", "", ""]
     },
 
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-click-right": "pamixer -t"
   },
 
   // === Tray ===
