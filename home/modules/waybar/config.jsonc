@@ -7,7 +7,8 @@
   // === Modules ===
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/window"
+    "hyprland/window",
+    "hyprland/submap"
   ],
 
   "modules-center": [
@@ -37,6 +38,13 @@
     "rewrite": {
       "^$": " NixOS"
     }
+  },
+
+  // === Active submap ===
+  "hyprland/submap": {
+    "format": "{}",
+    "max-length": 12,
+    "tooltip": false
   },
 
   // === Clock ===

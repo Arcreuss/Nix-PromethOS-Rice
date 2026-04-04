@@ -22,9 +22,10 @@ window#waybar {
   margin-bottom: 4px;
 }
 
-/* Pastilles */
+/* Pills */
 #workspaces,
 #window,
+#submap,
 #clock,
 #pulseaudio,
 #network,
@@ -76,6 +77,15 @@ window#waybar {
   padding-right: 14px;
 }
 
+#submap {
+  background: alpha(@bg-alt, 0.72);
+  border: 2px solid alpha(@accent, 0.50);
+  border-radius: 999px;
+  padding: 0 12px;
+  margin: 0 5px;
+  color: @accent;
+}
+
 /* Clock */
 #clock {
   color: @accent;
@@ -84,7 +94,7 @@ window#waybar {
   padding-right: 16px;
 }
 
-/* Modules de droite */
+/* Right module */
 #pulseaudio,
 #network,
 #cpu,
@@ -93,7 +103,7 @@ window#waybar {
   color: @accent;
 }
 
-/* États spéciaux */
+/* Special effects */
 #pulseaudio.muted,
 #network.disconnected {
   color: @urgent;
