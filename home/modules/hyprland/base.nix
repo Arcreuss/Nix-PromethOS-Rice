@@ -136,10 +136,10 @@
 
     extraConfig = ''
       submap=resize
-      bind=,H,resizeactive,-20 0
-      bind=,L,resizeactive, 20 0
-      bind=,K,resizeactive,0 -20
-      bind=,J,resizeactive,0  20
+      binde=,H,resizeactive,-10 0
+      binde=,L,resizeactive, 10 0
+      binde=,K,resizeactive,0 -10
+      binde=,J,resizeactive,0  10
       
       bind=,N,movefocus,l
       bind=,M,movefocus,d
@@ -157,6 +157,11 @@
       bind=,L,movewindow,r
       bind=,K,movewindow,u
       bind=,J,movewindow,d
+
+      bind=,N,movefocus,l
+      bind=,M,movefocus,d
+      bind=,comma,movefocus,u
+      bind=,period,movefocus,r
 
       bind=,F,togglefloating
       bind=,P,pseudo
