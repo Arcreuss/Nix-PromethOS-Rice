@@ -29,10 +29,6 @@
     enableZshIntegration = true;
   };
 
-  programs.starship = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
     bat
     eza

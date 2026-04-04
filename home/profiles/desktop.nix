@@ -15,6 +15,9 @@
     ../modules/media.nix
     ../modules/theme.nix
 
+    ../modules/kitty/kitty.nix
+    ../modules/starship/starship.nix
+
     ../modules/hyprland/base.nix
     ../modules/hyprland/desktop.nix
     ../modules/hyprland/media.nix

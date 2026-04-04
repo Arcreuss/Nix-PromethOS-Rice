@@ -50,6 +50,12 @@ in
     '';
   };
 
+  xdg.configFile."wallust/templates/colors-kitty.conf".source =
+  ./kitty/colors-kitty.conf.template;
+
+  xdg.configFile."wallust/templates/starship.toml".source =
+  ./starship/starship.toml.template;
+
   xdg.configFile."wallust/templates/rofi-colors.rasi".source =
   ../modules/rofi/colors.rasi.template;
 
