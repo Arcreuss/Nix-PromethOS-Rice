@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     vlc
-    inputs.yt-x.packages.${pkgs.system}.default
+    inputs.yt-x.packages.${pkgs.stdenv.hostPlatform.system}.default
     spotify
   ];
 }

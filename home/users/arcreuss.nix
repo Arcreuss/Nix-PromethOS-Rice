@@ -17,20 +17,23 @@
   programs.git = {
     enable = true;
 
-    userName = "Arcreuss";
-    userEmail = "63006702+Arcreuss@users.noreply.github.com";
+    settings = {
+      user = {
+        name = "Arcreuss";
+        email = "63006702+Arcreuss@users.noreply.github.com";
+      };
 
-    extraConfig = {
+      alias = {
+        st = "status -sb";
+        co = "checkout";
+        br = "branch";
+        lg = "log --oneline --graph --decorate --all";
+      };
+
+      # extraConfig
       init.defaultBranch = "main";
       pull.rebase = false;
       push.autoSetupRemote = true;
-    };
-
-    aliases = {
-      st = "status -sb";
-      co = "checkout";
-      br = "branch";
-      lg = "log --oneline --graph --decorate --all";
     };
   }; 
 }
