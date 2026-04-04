@@ -12,14 +12,6 @@
     useOSProber = true;
     devices = [ "nodev" ];
   };
-  boot.loader.grub.extraEntries = ''
-    menuentry "Bazzite" {
-      insmod part_gpt
-      insmod fat
-      search --no-floppy --fs-uuid --set=root 032A-49F1
-      chainloader /EFI/fedora/shimx64.efi
-    }
-  '';
   
   # Optimization ZRam
   zramSwap = {
