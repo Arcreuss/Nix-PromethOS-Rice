@@ -4,6 +4,7 @@
     bg-alt: {{color0}}ee;
     fg: {{foreground}};
     accent: {{color6}};
+    accent2: {{color5}};
 
     // Wallpaper colors
     foreground: {{foreground}};
