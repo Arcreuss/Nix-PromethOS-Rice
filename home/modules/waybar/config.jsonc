@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 40,
+  "height": 42,
   "spacing": 8,
 
   // === Modules ===
@@ -33,7 +33,10 @@
   // === Active window title ===
   "hyprland/window": {
     "format": "{}",
-    "max-length": 40
+    "max-length": 50,
+    "rewrite": {
+      "^$": " NixOS"
+    }
   },
 
   // === Clock ===
