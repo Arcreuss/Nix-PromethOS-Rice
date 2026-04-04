@@ -25,7 +25,6 @@ window#waybar {
 /* Pills */
 #workspaces,
 #window,
-#submap,
 #clock,
 #pulseaudio,
 #network,
@@ -38,6 +37,14 @@ window#waybar {
   padding: 0 12px;
   margin: 0 5px;
   color: @accent;
+}
+#submap {
+  background: alpha(@bg-alt, 0.72);
+  border: 2px solid alpha(@accent-alt, 0.50);
+  border-radius: 999px;
+  padding: 0 12px;
+  margin: 0 5px;
+  color: @accent-alt;
 }
 
 /* Workspaces */
@@ -79,11 +86,11 @@ window#waybar {
 
 #submap {
   background: alpha(@bg-alt, 0.72);
-  border: 2px solid alpha(@accent, 0.50);
+  border: 2px solid alpha(@accent-alt, 0.50);
   border-radius: 999px;
   padding: 0 12px;
   margin: 0 5px;
-  color: @accent;
+  color: @accent-alt;
 }
 
 /* Clock */
