@@ -12,7 +12,7 @@
   wayland.windowManager.hyprland.settings = {
     bind = [
       # Print → zone → save + clipboard
-      ", Print, exec, grim -g \"$(slurp)\" - | tee ~/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy && notify-send 'Screenshot' 'Saved + Copied'"
+      ", Print, exec, grim -g \"$(slurp)\" - | wl-copy && notify-send 'Screenshot' 'Copied to clipboard'"
 
       # Super + Print → zone → swappy (édition) + clipboard
       "$mod, Print, exec, grim -g \"$(slurp)\" - | tee ~/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png | swappy -f - && notify-send 'Screenshot' 'Editing'"
