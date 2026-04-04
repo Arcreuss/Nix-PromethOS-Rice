@@ -1,0 +1,67 @@
+@import "~/.config/rofi/wallust/rofi-colors.rasi"
+
+configuration {
+    modi: "drun";
+    show-icons: false;
+}
+
+* {
+    background-color: transparent;
+    text-color: @fg;
+    border-color: @accent;
+
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+window {
+    location: north;
+    anchor: north;
+    x-offset: 0px;
+    y-offset: 40px;
+
+    width: 320px;
+    border: 2px;
+    border-radius: 22px;
+    background-color: @bg;
+    transparency: "real";
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ "listview" ];
+    spacing: 0px;
+    padding: 12px;
+}
+
+listview {
+    columns: 1;
+    lines: 4;
+    cycle: false;
+    dynamic: false;
+    scrollbar: false;
+    layout: vertical;
+    spacing: 10px;
+    background-color: transparent;
+}
+
+element {
+    border: 2px;
+    border-radius: 999px;
+    border-color: @accent;
+    background-color: @bg-alt;
+    padding: 10px 14px;
+    text-color: @accent;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @background;
+    border-color: @accent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}

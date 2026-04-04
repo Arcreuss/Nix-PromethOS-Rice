@@ -13,5 +13,11 @@
     };
   };
 
+  home.file.".config/rofi/powermenu.sh" = {
+    source = ./powermenu.sh;
+    executable = true;
+  };
+
   xdg.configFile."rofi/wallpaper-theme.rasi".source = ./wallpaper-theme.rasi;
+  xdg.configFile."rofi/powermenu.rasi".source = ./powermenu.rasi;
 }

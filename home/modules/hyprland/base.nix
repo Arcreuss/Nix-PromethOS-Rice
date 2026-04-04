@@ -47,6 +47,7 @@
         "$mod, Q, killactive"
         "$mod, Delete, exit"
         "$mod, D, exec, rofi -show drun"
+	"$mod, P, exec, ~/.config/rofi/powermenu.sh"
 
 	"$mod, H, movefocus, l"
 	"$mod, L, movefocus, r"
