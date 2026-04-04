@@ -9,9 +9,19 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     TERMINAL = "kitty";
-    BROWSER = "firefox";
+    BROWSER = "zen";
 
     ADW_DISABLE_PORTAL = "1";
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+
+    defaultApplications = {
+      "text/html" = "zen.desktop";
+      "x-scheme-handler/http" = "zen.desktop";
+      "x-scheme-handler/https" = "zen.desktop";
+    };
   };
   
   programs.git = {

@@ -41,6 +41,7 @@
       bind = [
 	"$mod, W, exec, pickwall"
 	"$mod SHIFT, W, exec, pickwall random"
+	"$mod SHIFT, BackSpace, exec, hyprctl dispatch exit"
 
         "$mod, Return, exec, kitty"
         "$mod, Q, killactive"

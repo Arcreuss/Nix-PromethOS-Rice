@@ -7,9 +7,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     yt-x.url = "github:Benexl/yt-x";
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, yt-x, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, yt-x, zen-browser, ... }@inputs:
   let
     system = "x86_64-linux";
   in

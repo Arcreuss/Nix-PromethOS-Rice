@@ -6,9 +6,10 @@
     ../modules/shell.nix
     ../modules/terminal.nix
     ../modules/wayland-tools.nix
+    ../modules/dev.nix
 
     ../modules/gtk.nix
-    ../modules/dev.nix
+    ../modules/xdg.nix
     
     ../modules/apps.nix
     ../modules/media.nix
