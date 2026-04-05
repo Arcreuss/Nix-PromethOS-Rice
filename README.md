@@ -394,6 +394,14 @@ systemctl hibernate
 * Incorrect `.ssh` ownership
 * Trying to edit Git config manually (overwritten by Home Manager)
 
+💡 Tip
+
+If boot hangs after a rebuild, you can always:
+
+- select a previous generation in GRUB
+- fix your configuration
+- rebuild again
+
 ---
 
 ### Final note
