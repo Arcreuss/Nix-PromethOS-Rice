@@ -44,6 +44,10 @@
       init.defaultBranch = "main";
       pull.rebase = false;
       push.autoSetupRemote = true;
+
+      safe = {
+        directory = [ "/etc/nixos" ];
+      };
     };
   }; 
 }

@@ -5,7 +5,7 @@
   # Bootloader. (GRUB + UEFI)
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.resumeDevice = "/dev/disk/by-uuid/44d023ca-9ccb-44f2-a16a-13bc21c117f6";
+  boot.resumeDevice = "/dev/disk/by-uuid/e4ce1c6d-84d6-4898-9dae-699dfe936d8b";
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
