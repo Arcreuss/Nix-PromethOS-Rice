@@ -12,13 +12,17 @@
 # NixOS & Flake
 
 ### :warning: This repository is currently under development :construction:
-I do not recommend cloning the repository at this time, as the initial structure has not yet been finalized.\
+The initial structure has just been finalized, knowledge of NixOS and how it works is necessary to maintain and modify it.\
 Since the project is still in development and brand new, I am not accepting contributors or pull requests at this time.\
 For now, please use this template as a guide to help you create your own.
+
+---
 
 ### :triangular_flag_on_post: IMPORTANT: You should NOT deploy this flake directly on your machine :exclamation:
 > The flake contains my hardware configuration file, which is not suitable for your hardware.\
 > Please make the necessary changes to adapt it to your machine and user account before rebuilding the Nix configuration.
+
+---
 
 ## The challenge with NixOS
 This is my first time using NixOS, and I can already tell that learning and building my own architecture is a difficult challenge.
@@ -26,10 +30,14 @@ NixOS provides exactly the philosophy I was looking for: stability, reproducibil
 I love how NixOS lets you manage your system however you want.\
 Here, the goal is to create a solid and robust architecture as possible, within my beginner's capabilities.
 
+---
+
 ## Hyprland
 As a fan of Arch ricing, I decided to customize my own NixOS window manager from scratch with Hyprland, which I had never used or setup before.\
 The Hyprland settings are distributed under the path *../nixos/home/modules/hyprland/* in order to easily define a new profile.\
 The keyboard shortcuts are based on Vim for the navigation.
+
+---
 
 ## Features
 - NixOS flake-based configuration
@@ -38,6 +46,8 @@ The keyboard shortcuts are based on Vim for the navigation.
 - Waybar + GTK theming
 - Dynamic color schemes using Wallust
 - Multi-host ready configuration
+
+---
 
 ## Structure
 ```bash
@@ -61,6 +71,8 @@ The keyboard shortcuts are based on Vim for the navigation.
 The main goal is to share a continuous integration of my configuration, easily usable after cloning by anyone.\
 Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles concepts.
 
+---
+
 ### Components
 | | NixOS (Wayland) |
 |--|--|
@@ -83,22 +95,171 @@ Currently, my system uses Flake, a HomeManager for my user, Hosts and Profiles c
 | **Notifications** | [swaync](https://github.com/ErikReider/SwayNotificationCenter) |
 | **Screenshots** | [grim](https://gitlab.freedesktop.org/emersion/grim) + [slupr](https://github.com/emersion/slurp) + [swappy](https://github.com/jtheoof/swappy) | 
 
+---
+
 ## Installation
-:exclamation: Please keep your **hardware-configuration.nix** and move it under your new host folder. :exclamation:
+
+❗Please keep your **hardware-configuration.nix** and adapt it to your machine.
+
+### :triangular_flag_on_post: Important notes before starting
+
+This setup is fully declarative and hardware-dependent.
+
+Before deploying:
+
+* Do **not** reuse my `hardware-configuration.nix`
+* Always generate your own after installation
+* Ensure disk UUIDs match your system
+
+---
+
+### 1. Clone the repository (SSH recommended)
+
 ```bash
-git clone https://github.com/Arcreuss/Nix-PromethOS-Rice.git
-cd Nix-PromethOS-Rice
-sudo nixos-rebuild switch --flake .#YourHost
+git clone git@github.com:Arcreuss/Nix-PromethOS-Rice.git /etc/nixos
+cd /etc/nixos
 ```
 
-Don't forget to add your user in **nixos/modules/users.nix**, you can use my configuration as reference.\
-Then execute the command line below to set your password.
+> ⚠️ Avoid HTTPS cloning to prevent GitHub authentication issues.
+
+---
+
+### 2. Fix permissions on `/etc/nixos`
+
+By default, `/etc/nixos` is owned by root.
+
+```bash
+sudo chown -R $USER:users /etc/nixos
+```
+
+This allows:
+
+* editing without sudo
+* using git normally
+
+---
+
+### 3. Hardware & base configuration (CRITICAL :triangular_flag_on_post:)
+
+After a fresh NixOS installation, the following files are already generated:
+
+```text
+/etc/nixos/hardware-configuration.nix
+/etc/nixos/configuration.nix
+```
+
+You should **reuse these files**, as they are already adapted to your system.
+
+### Move them into your host
+
+```bash
+mv /etc/nixos/hardware-configuration.nix /etc/nixos/hosts/YourHost/
+mv /etc/nixos/configuration.nix /etc/nixos/hosts/YourHost/
+```
+
+> ⚠️ These files are machine-specific and required for a correct boot.
+
+### If the files are missing
+
+If you accidentally deleted them or replaced your system:
+
+```bash
+sudo nixos-generate-config
+```
+
+This will regenerate both:
+
+* `hardware-configuration.nix`
+* `configuration.nix`
+
+Then move them again into your host folder.
+
+### Update `configuration.nix`
+
+Ensure your host configuration imports the correct hardware file:
+
+```nix
+imports = [
+  ./hardware-configuration.nix
+  # other modules...
+];
+```
+
+### Important
+
+* `hardware-configuration.nix` defines:
+
+  * disks
+  * partitions
+  * swap
+  * filesystems
+
+* `configuration.nix` is your system entry point:
+
+  * it must be correctly placed inside your host
+  * and used by your flake
+
+> ⚠️ A mismatch here can prevent your system from booting.
+
+---
+
+### 4. Verify disk UUIDs
+
+Check your disks:
+
+```bash
+lsblk -f
+```
+
+Ensure these match inside `hardware-configuration.nix`:
+
+* `/` (root)
+* `/boot`
+* `swap`
+
+---
+
+### 5. Configure hibernation (if using swap)
+
+Update in:
+
+```
+modules/boot.nix
+```
+
+```nix
+boot.resumeDevice = "/dev/disk/by-uuid/YOUR_SWAP_UUID";
+```
+
+> ⚠️ A wrong UUID will cause the system to hang during boot.
+
+---
+
+### 6. Add your user
+
+Edit:
+
+```
+modules/users.nix
+```
+
+Then set your password:
+
 ```bash
 passwd YourUser
 ```
 
-Create a new user file under the path *nixos/home/users/* to use the HomeManager.
-```bash
+---
+
+### 7. Create your Home Manager user
+
+Create:
+
+```
+home/users/YourUser.nix
+```
+
+```nix
 { pkgs, ... }:
 
 {
@@ -107,19 +268,25 @@ Create a new user file under the path *nixos/home/users/* to use the HomeManager
   home.stateVersion = "YourVersion";
 
   home.sessionVariables = {
-    # Declare here all environment variables for your user.
-
-    # Examples
     EDITOR = "nvim";
     VISUAL = "nvim";
     TERMINAL = "kitty";
     BROWSER = "firefox";
-  }; 
+  };
 }
 ```
-For your new personal host, you have to link it with your user thought the Home Manager.\
-Create a new **home.nix** inside *nixos/hosts/YourHostFolder* and add this configuration.
-```bash
+
+---
+
+### 8. Link Home Manager to your host
+
+Create:
+
+```
+hosts/YourHost/home.nix
+```
+
+```nix
 { ... }:
 
 {
@@ -129,16 +296,115 @@ Create a new **home.nix** inside *nixos/hosts/YourHostFolder* and add this confi
   ];
 }
 ```
-If you want to create a new profile, please always use this configuration as a minimal requirement.
-```bash
+
+---
+
+### 9. Create a profile (optional)
+
+Minimal structure:
+
+```nix
 { ... }:
 
 {
   imports = [
-    ../modules/core.nix  # Add others modules after the core.nix
+    ../modules/core.nix
   ];
 }
 ```
+
+---
+
+### 10. Git configuration (Home Manager)
+
+Git is declarative in this setup.
+
+Do **not** use:
+
+```bash
+git config --global
+```
+
+Instead, configure in Home Manager:
+
+```nix
+programs.git.settings.safe.directory = [ "/etc/nixos" ];
+```
+
+---
+
+### 11. SSH setup (GitHub)
+
+Restore your SSH keys:
+
+```bash
+cp -r /path/to/backup/.ssh ~/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
+```
+
+Test:
+
+```bash
+ssh -T git@github.com
+```
+
+---
+
+### 12. GPG (optional)
+
+```bash
+rsync -av /path/to/backup/.gnupg ~/.gnupg
+chmod 700 ~/.gnupg
+find ~/.gnupg -type f -exec chmod 600 {} \;
+```
+
+---
+
+### 13. Build the system
+
+```bash
+sudo nixos-rebuild switch --flake /etc/nixos#YourHost
+```
+
+---
+
+### 14. First boot checks
+
+```bash
+lsblk -f
+swapon --show
+zramctl
+```
+
+Optional test:
+
+```bash
+systemctl hibernate
+```
+
+---
+
+### 15. Common pitfalls
+
+* Wrong `hardware-configuration.nix`
+* Wrong swap UUID → boot freeze
+* HTTPS Git → authentication failure
+* Missing `/etc/nixos` permissions
+* Incorrect `.ssh` ownership
+* Trying to edit Git config manually (overwritten by Home Manager)
+
+---
+
+### Final note
+
+This system is designed to be reproducible.
+
+If something breaks:
+
+> Fix the configuration, not the system.
+
+---
 
 ## Theme & Visuals
 The final result should be something visually refined and classic.\
