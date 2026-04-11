@@ -29,5 +29,7 @@
     ../modules/waybar/waybar.nix
 
     ../modules/rofi/rofi.nix
+
+    ../modules/dev/cpp.nix
   ];
 }
