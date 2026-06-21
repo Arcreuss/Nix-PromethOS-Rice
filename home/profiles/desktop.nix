@@ -13,6 +13,7 @@
     
     ../modules/apps.nix
     ../modules/media.nix
+    ../modules/audio.nix
     ../modules/theme.nix
 
     ../modules/kitty/kitty.nix

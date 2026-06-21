@@ -21,5 +21,8 @@
     lutris
     wineWowPackages.stable
     vulkan-tools
+    gamescope
+    v4l-utils
+    usbutils
   ];
 }
