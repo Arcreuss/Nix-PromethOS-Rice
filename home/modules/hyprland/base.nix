@@ -120,6 +120,7 @@
       windowrulev2 = [
         "float, class:^(org.pulseaudio.pavucontrol)$"
 	"float, title:^(Open File|Save File|Choose Files)$"
+	"tile, class:^(steam)$"
 	"workspace 2, class:^(discord-canary)$"
 	"workspace 2, class:^(Spotify)$"
       ];
